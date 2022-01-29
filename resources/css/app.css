@@ -1,0 +1,17 @@
+@import "dashlite.min.css";
+@import "theme.css";
+.icon_nav {
+    width: 100% !important;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.nk-body {
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.bottom-nav .nav-item.selected .nav-link {
+    color: white !important;
+}
