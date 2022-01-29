@@ -88,8 +88,8 @@ Livewire.on('resultSend', () => {
     $("#statusforget").removeClass("d-none")
 });
 Livewire.on('loginSuccess', () => {
-
-location.reload();
+    window.livewire.restart();
+// location.reload();
 });
 </script>
 
