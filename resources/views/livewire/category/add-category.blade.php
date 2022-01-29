@@ -15,12 +15,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        @if ($icon)
-                        <div class="d-flex flex-column justify-center align-items-center">
-                            Photo Preview:
-                            <img   class="img-icon" src="{{ $icon->temporaryUrl() }}">
-                        </div>
-                        @endif
+
                         <div class="form-group">
                             <label class="form-label" for="customFileLabel">Icon</label>
                             <div class="form-control-wrap">
