@@ -4,10 +4,10 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class BugReport extends Component
+class DetailBugReport extends Component
 {
     public function render()
     {
-        return view('livewire.bug-report');
+        return view('livewire.detail-bug-report');
     }
 }

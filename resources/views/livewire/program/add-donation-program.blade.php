@@ -13,7 +13,7 @@
                         <div class="form-group">
                             <label class="form-label" for="default-01">Judul Program</label>
                             <div class="form-control-wrap">
-                                <input type="text" class="form-control" wire:model="title" >
+                                <input type="text" class="form-control" wire:model.lazy="title" >
                                 @error('title') <span class="error">{{ $message }}</span> @enderror
                             </div>
                         </div>

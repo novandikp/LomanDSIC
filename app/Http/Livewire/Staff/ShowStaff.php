@@ -34,9 +34,8 @@ class ShowStaff extends Component
     {
         $searchTerm = '%' . $this->searchTerm . '%';
         return view('livewire.staff.show-staff', [
-            'users' => User::where('name', 'ilike', $searchTerm)
-                ->where('role', "staff")
-                ->orWhere('email', 'ilike', $searchTerm)->paginate($this->limit),
+            'users' => User::where('role', 'staff')
+                ->whereRaw("(name ilike ? OR email ilike ? )", array($searchTerm, $searchTerm))->paginate($this->limit),
         ])->extends('layouts.admin')
             ->section('content');;
     }

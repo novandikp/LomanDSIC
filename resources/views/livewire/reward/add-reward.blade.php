@@ -9,7 +9,7 @@
                         <div class="form-group">
                             <label class="form-label" for="default-01">Nama Judul</label>
                             <div class="form-control-wrap">
-                                <input type="text" class="form-control" wire:model="reward" >
+                                <input type="text" class="form-control" wire:model.lazy="reward" >
                                 @error('reward') <span class="error">{{ $message }}</span> @enderror
                             </div>
                         </div>
@@ -18,7 +18,7 @@
                         <div class="form-group">
                             <label class="form-label" for="default-01">Minimal Koin</label>
                             <div class="form-control-wrap">
-                                <input type="text" class="form-control" wire:model="minimal" >
+                                <input type="text" class="form-control" wire:model.lazy="minimal" >
                                 @error('minimal') <span class="error">{{ $message }}</span> @enderror
                             </div>
                         </div>

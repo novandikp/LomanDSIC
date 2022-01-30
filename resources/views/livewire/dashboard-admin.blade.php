@@ -274,7 +274,7 @@
                 </div><!-- .card -->
             </div><!-- .col -->
             <div class="col-lg-6 col-xxl-8">
-                <div class="card h-100">
+                <div class="card">
                     <div class="card-inner border-bottom">
                         <div class="card-title-group">
                             <div class="card-title">

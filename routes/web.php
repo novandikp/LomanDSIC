@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\GoogleController;
 use App\Http\Livewire\Auth\ForgetPassword;
 use App\Http\Livewire\Auth\LoginPage;
 use App\Http\Livewire\Auth\RegisterPage;
+use App\Http\Livewire\Bugs\BugReport;
+use App\Http\Livewire\Bugs\DetailBugReport;
 use App\Http\Livewire\Categories\AddCategory;
 use App\Http\Livewire\Categories\EditCategory;
 use App\Http\Livewire\Categories\ShowCategory;
@@ -11,6 +14,7 @@ use App\Http\Livewire\ShowPosts;
 
 use App\Http\Livewire\DashboardAdmin;
 use App\Http\Livewire\Donatur\DonaturRegistered;
+use App\Http\Livewire\Profile\ProfilePage;
 use App\Http\Livewire\Program\AddDonationProgram;
 use App\Http\Livewire\Program\ShowDonationProgram;
 use App\Http\Livewire\Rewards\AddReward;
@@ -33,6 +37,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get("google/login", [GoogleController::class, "redirectToGoogle"]);
+Route::get("google/callback", [GoogleController::class, "callback"]);
 Route::middleware("login")->group(function () {
     Route::get('/login', LoginPage::class);
     Route::get('/register', RegisterPage::class);
@@ -67,6 +73,11 @@ Route::prefix('admin')->middleware("staff")->group(function () {
         Route::get('/add', AddDonationProgram::class);
         Route::get('/edit/{id}', EditStaff::class);
     });
+    Route::prefix('bugs')->group(function () {
+        Route::get('/', BugReport::class);
+        Route::get('/{id}', DetailBugReport::class);
+    });
+    Route::get('/profile', ProfilePage::class);
     Route::get('/donatur', DonaturRegistered::class);
 });
 Route::get('/tes', function () {

@@ -101,7 +101,7 @@
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">
-                                    <a href="{{url('admin/staff')}}" class="nk-menu-link">
+                                    <a href="{{url('admin/bugs')}}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-bugs"></em></span>
                                         <span class="nk-menu-text">Bug Aplikasi</span>
                                     </a>
@@ -167,10 +167,7 @@
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="html/user-profile-regular.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                                    <li><a href="html/user-profile-setting.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                                    <li><a href="html/user-profile-activity.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
-
+                                                    <li><a href="{{url('admin/profile')}}"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
                                                 </ul>
                                             </div>
                                             <div class="dropdown-inner">
@@ -210,7 +207,7 @@
     <!-- JavaScript -->
     <script data-turbolinks-eval='false'  src="{{url('js/admin.js')}}" defer></script>
     @livewireScripts
-    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script>
     @stack('scripts')
 
 </body>

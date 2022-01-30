@@ -9,7 +9,7 @@
                         <div class="form-group">
                             <label class="form-label" for="default-01">Nama Kategori</label>
                             <div class="form-control-wrap">
-                                <input type="text" class="form-control" wire:model="category" >
+                                <input type="text" class="form-control" wire:model.lazy="category" >
                                 @error('category') <span class="error">{{ $message }}</span> @enderror
                             </div>
                         </div>
@@ -31,7 +31,7 @@
                             <div class="form-control-wrap">
                                 <div class="custom-file">
 
-                                    <input  type="file" class="custom-file-input" wire:model="icon"  accept="image/x-png,image/jpeg,image/jpg" >
+                                    <input  type="file" class="custom-file-input" wire:model.lazy="icon"  accept="image/x-png,image/jpeg,image/jpg" >
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                     @error('icon') <span class="error">{{ $message }}</span> @enderror
                                 </div>

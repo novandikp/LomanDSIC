@@ -14,7 +14,7 @@
                 <div class="form-label-group">
                     <label class="form-label" for="default-01">Email</label>
                 </div>
-                <input type="text" wire:model="email" class="form-control form-control-lg" id="default-01" placeholder="Masukkan Email">
+                <input type="text" wire:model.lazy="email" class="form-control form-control-lg" id="default-01" placeholder="Masukkan Email">
                 @error('email') <span class="error">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
@@ -22,12 +22,12 @@
                     <label class="form-label" for="password">Password</label>
                     <a class="link link-primary link-sm" href="#"  data-toggle="modal" data-target="#modalForm">Forgot Code?</a>
                 </div>
-                <div class="form-control-wrap">
+                <div wire:ignore class="form-control-wrap">
                     <a href="#" class="form-icon form-icon-right passcode-switch" data-target="password">
                         <em class="passcode-icon icon-show icon ni ni-eye"></em>
                         <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
                     </a>
-                    <input wire:model="password" type="password" class="form-control form-control-lg" id="password" placeholder="Masukkan Password">
+                    <input wire:model.lazy="password" type="password" class="form-control form-control-lg" id="password" placeholder="Masukkan Password">
                     @error('password') <span class="error">{{ $message }}</span> @enderror
                 </div>
             </div>
@@ -43,7 +43,16 @@
                 <button class="btn btn-lg btn-primary btn-block">Masuk</button>
             </div>
         </form>
-        <div class="form-note-s2 text-center pt-4"> Tidak punya akun ? <a href="/register">Buat Akun</a>
+        <div class="form-note-s2 text-center pt-3"> Tidak punya akun ? <a href="/register">Buat Akun</a>
+            <div class="text-center pt-2 pb-1">
+                <h6 class="overline-title overline-title-sap"><span>OR</span></h6>
+            </div>
+            <a data-turbolinks="false" href="{{url('google/login')}}" class="btn align-items-center">
+                <div class="left">
+                <img width="20px" class="mr-2" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+            </div>
+            Login with Google
+            </a>
         </div>
 
     </div>
@@ -61,7 +70,7 @@
                         <div class="form-group">
                             <label class="form-label" for="full-name" >Email</label>
                             <div class="form-control-wrap">
-                                <input type="text" class="form-control" id="full-name" wire:model="forgetEmail">
+                                <input type="text" class="form-control" id="full-name" wire:model.lazy="forgetEmail">
                                 @error('forgetEmail') <span class="error">{{ $message }}</span> @enderror
                             </div>
                         </div>
@@ -88,8 +97,8 @@ Livewire.on('resultSend', () => {
     $("#statusforget").removeClass("d-none")
 });
 Livewire.on('loginSuccess', () => {
-    window.livewire.restart();
-// location.reload();
+    // window.livewire.restart();
+location.reload();
 });
 </script>
 

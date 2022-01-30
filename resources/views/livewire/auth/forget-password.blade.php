@@ -21,7 +21,7 @@
                         <em class="passcode-icon icon-show icon ni ni-eye"></em>
                         <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
                     </a>
-                    <input wire:model="password" type="password" class="form-control form-control-lg" id="password" placeholder="Masukkan Password">
+                    <input wire:model.lazy="password" type="password" class="form-control form-control-lg" id="password" placeholder="Masukkan Password">
                     @error('password') <span class="error">{{ $message }}</span> @enderror
                 </div>
             </div>
@@ -36,7 +36,7 @@
                         <em class="passcode-icon icon-show icon ni ni-eye"></em>
                         <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
                     </a>
-                    <input wire:model="password_confirmation" type="password" class="form-control form-control-lg" id="password-confirm" placeholder="Masukkan Password">
+                    <input wire:model.lazy="password_confirmation" type="password" class="form-control form-control-lg" id="password-confirm" placeholder="Masukkan Password">
                     @error('password_confirmation') <span class="error">{{ $message }}</span> @enderror
                 </div>
             </div>

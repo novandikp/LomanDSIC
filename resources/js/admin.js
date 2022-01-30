@@ -10,7 +10,6 @@ require("./bundle");
 require("./scriptsadmin");
 require("./charts/chart-sales");
 window.Swal = require("sweetalert2");
-
-$(document).on("turbolinks:load", function () {
-    console.log("load");
+document.addEventListener("turbolinks:load", function () {
+    NioApp.TGL.init();
 });

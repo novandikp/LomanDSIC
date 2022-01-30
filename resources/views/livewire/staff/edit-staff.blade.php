@@ -9,7 +9,7 @@
                         <div class="form-group">
                             <label class="form-label" for="default-01">Email</label>
                             <div class="form-control-wrap">
-                                <input type="text" class="form-control" wire:model="email" >
+                                <input type="text" class="form-control" wire:model.lazy="email" >
                                 @error('email') <span class="error">{{ $message }}</span> @enderror
                             </div>
                         </div>
@@ -18,7 +18,7 @@
                         <div class="form-group">
                             <label class="form-label" for="default-01">Nama</label>
                             <div class="form-control-wrap">
-                                <input type="text" class="form-control" wire:model="name" >
+                                <input type="text" class="form-control" wire:model.lazy="name" >
                                 @error('name') <span class="error">{{ $message }}</span> @enderror
                             </div>
                         </div>
@@ -27,7 +27,7 @@
                         <div class="form-group">
                             <label class="form-label" for="default-01">Password</label>
                             <div class="form-control-wrap">
-                                <input type="password" class="form-control" wire:model="password" >
+                                <input type="password" class="form-control" wire:model.lazy="password" >
                                 @error('password') <span class="error">{{ $message }}</span> @enderror
                                 <small>*) Kosongi jika tidak ada perubahan</small>
                             </div>
@@ -37,7 +37,7 @@
                         <div class="form-group">
                             <label class="form-label" for="default-01">No HP</label>
                             <div class="form-control-wrap">
-                                <input type="text" class="form-control" wire:model="nohp" >
+                                <input type="text" class="form-control" wire:model.lazy="nohp" >
                                 @error('nohp') <span class="error">{{ $message }}</span> @enderror
                             </div>
                         </div>

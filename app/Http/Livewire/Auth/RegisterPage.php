@@ -5,11 +5,13 @@ namespace App\Http\Livewire\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 
 class RegisterPage extends Component
 {
     public  $user = [];
+    public $auth;
 
     protected $rules = [
         'user.email' => 'required|email|unique:users,email',
@@ -34,6 +36,14 @@ class RegisterPage extends Component
         User::create($this->user);
         if (Auth::attempt($credentials)) {
             return redirect('');
+        }
+    }
+
+    public function mount()
+    {
+        if (Session::has('email_data')) {
+            $this->user['email'] = Session::get('email_data');
+            $this->auth = true;
         }
     }
 
